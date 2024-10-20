@@ -3,8 +3,8 @@ def find_new_moon_conjunctions(swe, start_jd, end_jd):
     conjunction_times = []  # List to store the conjunction times
 
     while start_jd <= end_jd:
-        sun_long = swe.calc_ut(start_jd, swe.SUN, flags=swe.FLG_SWIEPH)[0][0]
-        moon_long = swe.calc_ut(start_jd, swe.MOON, flags=swe.FLG_SWIEPH)[0][0]
+        sun_long = swe.calc_ut(start_jd, swe.SUN, flags=swe.FLG_JPLEPH)[0][0]
+        moon_long = swe.calc_ut(start_jd, swe.MOON, flags=swe.FLG_JPLEPH)[0][0]
 
         # Calculate the difference in longitudes
         diff = (moon_long - sun_long) % 360
